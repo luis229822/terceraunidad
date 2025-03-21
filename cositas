@@ -1,0 +1,43 @@
+-crear sql sqlltite
+-en conecion darle una 0.0.0.0/0 
+
+-crear bucket
+-entrar a power shell
+
+-copiamos en raw 
+curl https://raw.githubusercontent.com/luis229822/db_sql/refs/heads/main/BD.sql --output bd.sql
+
+-copiamos el archivo al bucket
+gsutil cp bd.sql gs://bd-pruebacasa
+
+entramos a sql e importamos el .sql del bucket
+
+-creamos maquina virtual 
+sudo apt-get update -y
+sudo apt install mysql-client -y
+mysql -h 34.55.51.175 -u root -p
+
+-php 
+
+-instalamos apache 
+sudo apt-get install -y apache2
+sudo apt-get install php-mysql
+
+sudo git clone https://github.com/tu-usuario/tu-repo.git /var/www/html/practica
+
+cd /var/www/html
+
+-mkdir 
+
+sudo chown -R www-data:www-data /var/www/html/practica
+sudo chmod -R 755 /var/www/html/practica
+
+cd /etc/apache2
+sudo nano envvars
+
+export MYSQL_HOST="IP"
+export MYSQL_USER=root
+export MYSQL_PASSWORD=123456
+
+sudo service apache2 restart
+sudo status apache2 
